@@ -6,15 +6,15 @@ const lightTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#287233',
-            light: '#539f5c',
-            dark: '#1e5128',
+            main: '#4C239F',
+            light: '#7C52CC',
+            dark: '#311B6C',
             contrastText: '#fff',
         },
         secondary: {
-            main: '#ffd54f',
-            light: '#ffff81',
-            dark: '#c8a415',
+            main: '#FFB74D',
+            light: '#FFCC80',
+            dark: '#F57C00',
             contrastText: '#000',
         },
         error: {
@@ -46,8 +46,8 @@ const lightTheme = createTheme({
             paper: '#ffffff',
         },
         text: {
-            primary: '#287233',
-            secondary: '#ffd54f',
+            primary: '#4C239F',
+            secondary: '#FFB74D',
             disabled: '#9e9e9e',
         },
         common: {

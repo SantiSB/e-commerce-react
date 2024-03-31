@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
         </Grid>
         <Divider sx={{ my: 6 }} />
         <Typography variant="body2" align="center">
-          © 2023 Flowbite™. All Rights Reserved.
+          © 2024 E-Commerce.
         </Typography>
       </Container>
     </FooterBox>

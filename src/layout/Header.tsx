@@ -45,7 +45,7 @@ const CustomIconButton = styled(IconButton)({
 
 const StyledFormControl = styled(FormControl)(({ theme }) => ({
   margin: theme.spacing(1),
-  width: '25ch',
+  width: 'auto',
   '& .MuiInputBase-input': {
     color: theme.palette.primary.main,
   },
