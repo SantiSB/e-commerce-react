@@ -19,10 +19,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <HashRouter>
-        <Layout
-          toggleTheme={toggleTheme}
-          isDarkMode={theme.palette.mode === 'dark'}
-        >
+        <Layout toggleTheme={toggleTheme}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />

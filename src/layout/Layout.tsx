@@ -5,16 +5,15 @@ import Footer from './Footer'
 interface LayoutProps {
   children: ReactNode
   toggleTheme: () => void
-  isDarkMode: boolean
 }
 
-const Layout = ({ children, toggleTheme, isDarkMode }: LayoutProps) => {
+const Layout = ({ children, toggleTheme }: LayoutProps) => {
   return (
     <>
-      <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+      <Header toggleTheme={toggleTheme} />
       {/* Contenedor o margen superior para evitar que el contenido se solape con el AppBar */}
       <div style={{ marginTop: 64, width: '100%' }}>{children}</div>
-      <Footer/>
+      <Footer />
     </>
   )
 }

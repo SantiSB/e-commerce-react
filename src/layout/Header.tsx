@@ -1,19 +1,27 @@
-import { AppBar, Toolbar, IconButton, Box, Typography } from '@mui/material'
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Box,
+  FormControl,
+  Input,
+  InputAdornment,
+} from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 import { Link } from 'react-router-dom'
-import DarkIcon from '../assets/DarkIcon'
-import LightIcon from '../assets/LightIcon'
-import ShoppingCartIcon from '../assets/ShoppingCartIcon'
+import DarkIcon from '../assets/icons/ui/DarkIcon'
+import LightIcon from '../assets/icons/ui/LightIcon'
+import SearchIcon from '../assets/icons/ui/SearchIcon'
+import ShoppingCartIcon from '../assets/icons/ui/ShoppingCartIcon'
 import MainLogo from '../assets/MainLogo'
 
 interface LayoutProps {
   toggleTheme: () => void
-  isDarkMode: boolean
 }
 
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
-  color: theme.palette.primary.main
+  color: theme.palette.primary.main,
 }))
 
 const CustomToolbar = styled(Toolbar)({
@@ -35,7 +43,24 @@ const CustomIconButton = styled(IconButton)({
   marginLeft: '8px',
 })
 
-const Header = ({ toggleTheme, isDarkMode }: LayoutProps) => {
+const StyledFormControl = styled(FormControl)(({ theme }) => ({
+  margin: theme.spacing(1),
+  width: '25ch',
+  '& .MuiInputBase-input': {
+    color: theme.palette.primary.main,
+  },
+  '& .MuiInput-underline:before': {
+    borderBottomColor: theme.palette.primary.dark,
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: theme.palette.primary.main,
+  },
+  '& .MuiInput-underline:hover:before': {
+    borderBottomColor: theme.palette.primary.light,
+  },
+}))
+
+const Header = ({ toggleTheme }: LayoutProps) => {
   const theme = useTheme()
 
   return (
@@ -45,25 +70,24 @@ const Header = ({ toggleTheme, isDarkMode }: LayoutProps) => {
           <MainLogo height={40} />
         </CustomLink>
         <Box display="flex" alignItems="center">
-          <CustomLink to="/productos">
-            <Typography
-              variant="button"
-              style={{ display: 'flex', alignItems: 'center' }}
-            >
-              Productos
-            </Typography>
-          </CustomLink>
-          <CustomIconButton>
-            <ShoppingCartIcon
-              color={
-                isDarkMode
-                  ? theme.palette.primary.main
-                  : theme.palette.primary.main
+          <StyledFormControl variant="standard">
+            <Input
+              id="search-input-header"
+              type="text"
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton aria-label="search icon">
+                    <SearchIcon color={theme.palette.primary.main} />
+                  </IconButton>
+                </InputAdornment>
               }
             />
+          </StyledFormControl>
+          <CustomIconButton>
+            <ShoppingCartIcon color={theme.palette.primary.main} />
           </CustomIconButton>
           <CustomIconButton onClick={toggleTheme}>
-            {isDarkMode ? (
+            {theme.palette.mode === 'dark' ? (
               <LightIcon color={theme.palette.primary.main} />
             ) : (
               <DarkIcon color={theme.palette.primary.main} />

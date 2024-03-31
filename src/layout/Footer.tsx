@@ -13,9 +13,9 @@ import MainLogo from '../assets/MainLogo'
 import InstagramIcon from '../assets/icons/social/InstagramIcon'
 import LinkedInIcon from '../assets/icons/social/LinkedInIcon'
 import FacebookIcon from '../assets/icons/social/FacebookIcon'
-import MailIcon from '../assets/icons/MailIcon'
-import PhoneIcon from '../assets/icons/PhoneIcon'
-import LocationIcon from '../assets/icons/LocationIcon'
+import MailIcon from '../assets/icons/ui/MailIcon'
+import PhoneIcon from '../assets/icons/ui/PhoneIcon'
+import LocationIcon from '../assets/icons/ui/LocationIcon'
 
 interface OrderProps {
   order: {
