@@ -27,7 +27,6 @@ interface OrderProps {
   }
 }
 
-// Styled components
 const FooterBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   color: theme.palette.primary.main,
@@ -45,7 +44,6 @@ const ContactInfoBox = styled(Box)({
   gap: '8px',
 })
 
-// Styled Grid component to apply order for responsive design
 const OrderedGrid = styled(Grid)<OrderProps>(({ theme, order }) => ({
   [theme.breakpoints.up('xs')]: {
     order: order?.xs ?? 0,
