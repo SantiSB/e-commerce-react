@@ -13,8 +13,8 @@ const Layout = ({ children, toggleTheme, isDarkMode }: LayoutProps) => {
     <>
       <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       {/* Contenedor o margen superior para evitar que el contenido se solape con el AppBar */}
-      <div style={{ marginTop: 64 }}>{children}</div>
-      <Footer />
+      <div style={{ marginTop: 64, width: '100%' }}>{children}</div>
+      <Footer/>
     </>
   )
 }

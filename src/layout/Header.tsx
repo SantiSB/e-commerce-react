@@ -57,16 +57,16 @@ const Header = ({ toggleTheme, isDarkMode }: LayoutProps) => {
             <ShoppingCartIcon
               color={
                 isDarkMode
-                  ? theme.palette.primary.light
-                  : theme.palette.primary.dark
+                  ? theme.palette.primary.main
+                  : theme.palette.primary.main
               }
             />
           </CustomIconButton>
           <CustomIconButton onClick={toggleTheme}>
             {isDarkMode ? (
-              <LightIcon color={theme.palette.primary.light} />
+              <LightIcon color={theme.palette.primary.main} />
             ) : (
-              <DarkIcon color={theme.palette.primary.dark} />
+              <DarkIcon color={theme.palette.primary.main} />
             )}
           </CustomIconButton>
         </Box>
